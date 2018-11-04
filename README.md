@@ -1,14 +1,17 @@
-# RPP
+RPP
+================
 
 This is an R implementation of Reinforced Poisson Process model proposed in Wang, Song, and Barabasi (2013).
 
 
-## Reference
+Reference
+----------------------
 
-Wang, D. S., C. M. Song, and A. L. Barabasi. 2013. “Quantifying Long-Term Scientific Impact.” JournalArticle.Science342 (6154): 127–32. doi:10.1126/science.1237825.3
+Wang, D. S., C. M. Song, and A. L. Barabasi. 2013. “Quantifying Long-Term Scientific Impact.” JournalArticle.Science342 (6154): 127–32. [doi:10.1126/science.1237825.3](<Go to ISI>://WOS:000325126100061
+http://science.sciencemag.org/content/sci/342/6154/127.full.pdf)
 
 
-Usage of rpp functions
+Example
 ================
 
 This document provide an example of using the functions in rpp.R to fit a citation curve, following the model proposed in Wang, Song, and Barabasi (2013).
@@ -81,7 +84,7 @@ plot(yearly.counts, type = 'b', xlab = 'years',
      main = 'Paper yearly citation counts')
 ```
 
-<img src="rpp_example_files/figure-markdown_github/unnamed-chunk-4-1.png" style="display: block; margin: auto;" />
+<img src="image/yearly_citation.png" style="display: block; margin: auto;" />
 
 Then fit RPP model to estimate the parameters
 
@@ -116,6 +119,6 @@ legend('topright', legend=c('true', 'fitted'),
        col = c('black','blue'), lty = 1:2, pch = c(1,3))
 ```
 
-<img src="rpp_example_files/figure-markdown_github/unnamed-chunk-6-1.png" style="display: block; margin: auto;" /> \# Reference
+<img src="image/fitted_curve.png" style="display: block; margin: auto;" /> \# Reference
 
 Wang, D. S., C. M. Song, and A. L. Barabasi. 2013. “Quantifying Long-Term Scientific Impact.” Journal Article. *Science* 342 (6154): 127–32. doi:[10.1126/science.1237825](https://doi.org/10.1126/science.1237825).
