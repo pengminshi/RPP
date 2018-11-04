@@ -3,11 +3,10 @@ RPP
 
 This is an R implementation of Reinforced Poisson Process model proposed in Wang, Song, and Barabasi (2013), see the reference for details of the model.
 
-
 Usage
-================
+=====
 
-Here is a brief description of how to use the functions provided in [rpp.R](https://github.com/pengminshi/RPP/blob/master/rpp.R) to fit a citation curve, following the model proposed in Wang, Song, and Barabasi (2013).
+Here is a brief description of how to use the functions provided in [rpp.R](https://github.com/pengminshi/RPP/blob/master/rpp.R) to fit a citation curve.
 
 First source the **rpp.R** file
 
@@ -15,17 +14,14 @@ First source the **rpp.R** file
 source('rpp.R')
 ```
 
-Usage of main function
-----------------------
+The main function is `fitRPP(citation.times, ...)`, where `citation.times` is a vector {*t*<sub>*i*</sub>}<sub>*i* = 1</sub><sup>*n*</sup> of the time each citation was recieved by the paper, which is recorded by number of days after the paper was published.
 
-The main function is `fitRPP(citation.times, ...)`, where `citation.times` is a vector {*t*<sub>*i*</sub>}<sub>*i* = 1</sub><sup>*n*</sup> of the time each citation is recieved by the paper, which is recorded by number of days after the paper was published.
-
-For example, a paper X was published in 2000.01.01, then it received the first citation 50 days after publication, and the second citations arrived 75 days later, and so on. If the papers has received *n* citations until the give time *T* then `citation.times`=(50, 75, ...*t*<sub>*n*</sub>).
+For example, a paper X was published in 2000.01.01, then it received the first citation 50 days afterwads, and the second citations arrived 75 days afterwards, and so on. If the papers received *n* citations until the give time *T* then `citation.times`=(50, 75, ...*t*<sub>*n*</sub>).
 
 Input parameters:
 
 -   `citation.times`: a vector indicating the arriving time of each citation {*t*<sub>*i*</sub>}<sub>*i* = 1</sub><sup>*n*</sup>
--   `m`: (optional) the global constant, suggested m = 30 by the science paper, as the defalt.
+-   `m`: (optional) the global constant, suggested *m* = 30 by the paper, as the defalt.
 -   `time.T` (optional) the observation time \[0, *T*\], so that 0 ≤ *t*<sub>1</sub> ≤ *t*<sub>2</sub> ≤ … ≤ *t*<sub>*n*</sub> ≤ *T*. If not given, use the last citation arriving time as *T*, so that *T* = *t*<sub>*n*</sub>.
 -   `verbose` (optional) boolean, whether to output esitmation at each step, by default is False.
 -   `mu.init` (optional) the initial value of *μ*.
@@ -59,7 +55,7 @@ citation.time.example = citationGenerator(time.T = time.T , lambda = 3,
 
     ## [1] 397
 
-Then add some noise
+Add some noise
 
 ``` r
 citation.time.example = citation.time.example + rnorm(n, 0,50)
@@ -77,7 +73,7 @@ plot(yearly.counts, type = 'b', xlab = 'years',
      main = 'Paper yearly citation counts')
 ```
 
-<img src="image/yearly_citation.png" style="display: block; margin: auto;" />
+<img src="figures/yearly-cites-1.png" style="display: block; margin: auto;" />
 
 Then fit RPP model to estimate the parameters
 
@@ -87,13 +83,13 @@ fit
 ```
 
     ## $mu
-    ## [1] 7.003895
+    ## [1] 7.007389
     ## 
     ## $sigma
-    ## [1] 1.041648
+    ## [1] 0.973368
     ## 
     ## $lambda
-    ## [1] 3.048524
+    ## [1] 2.964967
     ## 
     ## $converge
     ## [1] TRUE
@@ -112,8 +108,9 @@ legend('topright', legend=c('true', 'fitted'),
        col = c('black','blue'), lty = 1:2, pch = c(1,3))
 ```
 
-<img src="image/fitted_curve.png" style="display: block; margin: auto;" /> 
+<img src="figures/fitted-1.png" style="display: block; margin: auto;" />
 
-# Reference
+Reference
+=========
 
 Wang, D. S., C. M. Song, and A. L. Barabasi. 2013. “Quantifying Long-Term Scientific Impact.” Journal Article. *Science* 342 (6154): 127–32. doi:[10.1126/science.1237825](https://doi.org/10.1126/science.1237825).
