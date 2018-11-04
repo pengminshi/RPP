@@ -1,7 +1,7 @@
 RPP
 ================
 
-This is an R implementation of Reinforced Poisson Process model proposed in Wang, Song, and Barabasi (2013), see the reference for details of the model.
+This is an R implementation of Reinforced Poisson Process model proposed in Wang, Song, and Barabasi (2013), please refer to the original paper for more details of the model.
 
 Usage
 =====
