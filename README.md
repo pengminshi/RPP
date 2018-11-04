@@ -1,13 +1,7 @@
 RPP
 ================
 
-This is an R implementation of Reinforced Poisson Process model proposed in Wang, Song, and Barabasi (2013).
-
-
-Reference
-----------------------
-
-Wang, D. S., C. M. Song, and A. L. Barabasi. 2013. “Quantifying Long-Term Scientific Impact.” JournalArticle.Science342 (6154): 127–32. doi:10.1126/science.1237825.3
+This is an R implementation of Reinforced Poisson Process model proposed in Wang, Song, and Barabasi (2013), see the reference for details of the model.
 
 
 Usage
